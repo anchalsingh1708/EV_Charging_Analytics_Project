@@ -1,0 +1,1779 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/30/2026 6:29:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-84HFCTF"
+  DTS:CreatorName="DESKTOP-84HFCTF\MSI"
+  DTS:DTSID="{9DF890EE-0BBC-4EC0-8125-222C00779A9F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{6BBD5AE7-D9C6-4C61-AE46-C5045F5123E1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-84HFCTF\SQLEXPRESS.EVAnalyticsDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{853E7591-D9D9-4A15-985A-E6C1A5A474CC}"
+      DTS:ObjectName="DESKTOP-84HFCTF\SQLEXPRESS.EVAnalyticsDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-84HFCTF\SQLEXPRESS;Initial Catalog=EVAnalyticsDB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{853E7591-D9D9-4A15-985A-E6C1A5A474CC}DESKTOP-84HFCTF\SQLEXPRESS.EVAnalyticsDB;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D55C46CE-4460-431D-B3D0-C2F81808A2FC}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\ANCHAL\MINI Project SEM 2\EV_Charging_Analytics_Project\data\raw\ev_stations_raw.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="station_id"
+              DTS:DTSID="{41A28EB0-B9FF-4EF9-BD62-CF30B2622E17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="station_name"
+              DTS:DTSID="{B2BF66B8-92BE-4C38-ACFA-9CD0E5247293}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street_address"
+              DTS:DTSID="{285E0729-6139-4387-9868-BD49C36BF7D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="120"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{E4DBD11F-BA64-4647-B6C4-3770BE24536C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{8643763E-9A04-4BF5-911C-1867E3980024}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zip"
+              DTS:DTSID="{5B94E290-7DE4-4603-BEF1-9E22C0B6B7B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{B20352EE-8E30-4D30-9073-70BA7C403F7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="latitude"
+              DTS:DTSID="{491C227F-EE72-4F2C-9B56-8B5401D61996}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="longitude"
+              DTS:DTSID="{A02F5045-AFB7-4F12-B705-1DB14E2E5E68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="160"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ev_network"
+              DTS:DTSID="{7BA5AB7C-C918-4141-821F-A1F1518F8175}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ev_connector_types"
+              DTS:DTSID="{86AB1A1D-1BD8-40A1-AEB2-3ED08FE0E4A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ev_level1_evse_num"
+              DTS:DTSID="{75C9F9BA-541F-4B9D-ABED-40360E7EB438}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ev_level2_evse_num"
+              DTS:DTSID="{EAD21B76-10BD-429E-B25A-F7E2C4D6084C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ev_dc_fast_num"
+              DTS:DTSID="{2A720C92-A9EA-47A6-9F2E-DBC20C8851F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="access_code"
+              DTS:DTSID="{7FDF19BD-E8C3-45C8-B949-CF50CBDB0D33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="access_days_time"
+              DTS:DTSID="{EF5C8251-148A-40CD-B053-E5B46C54DEEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_code"
+              DTS:DTSID="{67711A25-3ABB-40D3-BD32-7F37CB8283A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="open_date"
+              DTS:DTSID="{C9D34D63-BF57-4FED-B20B-3EAF5BE37355}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_last_confirmed"
+              DTS:DTSID="{B9110E75-9146-4913-8A87-1D77FFD8B0E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="260"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="source_file"
+              DTS:DTSID="{B282248D-3928-4887-A23A-548449ECA340}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load EV Raw CSV to SQL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DF16DC64-933C-42FD-BB6E-E1D8EFD7ACE4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load EV Raw CSV to SQL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load EV Raw CSV to SQL\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[station_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="station_id"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_id]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[station_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="station_name"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_name]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[street_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="street_address"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[street_address]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="120"
+                      cachedName="city"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="state"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[zip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="zip"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[zip]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="country"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[ev_network]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="160"
+                      cachedName="ev_network"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_network]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[ev_connector_types]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ev_connector_types"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_connector_types]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[status_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="status_code"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[status_code]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[access_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="access_code"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_code]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[access_days_time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="access_days_time"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_days_time]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input].Columns[source_file]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="260"
+                      cachedName="source_file"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[source_file]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[station_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[station_id_unicode]"
+                      name="station_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[station_name_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[station_name_unicode]"
+                      name="station_name_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[street_address_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[street_address_unicode]"
+                      name="street_address_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[street_address]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[city_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="120"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[city_unicode]"
+                      name="city_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[state_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[state_unicode]"
+                      name="state_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[state]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[zip_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[zip_unicode]"
+                      name="zip_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[zip]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[country_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[country_unicode]"
+                      name="country_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[country]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[ev_network_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="160"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[ev_network_unicode]"
+                      name="ev_network_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_network]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[ev_connector_types_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[ev_connector_types_unicode]"
+                      name="ev_connector_types_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_connector_types]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[status_code_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[status_code_unicode]"
+                      name="status_code_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[status_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[access_code_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[access_code_unicode]"
+                      name="access_code_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[access_days_time_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[access_days_time_unicode]"
+                      name="access_days_time_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_days_time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[source_file_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="260"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[source_file_unicode]"
+                      name="source_file_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[source_file]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load EV Raw CSV to SQL\Raw csv Data"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="16393"
+              name="Raw csv Data"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[station_id]"
+                      length="100"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_id]"
+                      name="station_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[station_name]"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[station_name]"
+                      name="station_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[street_address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[street_address]"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[street_address]"
+                      name="street_address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      length="120"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[zip]"
+                      length="30"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[zip]"
+                      name="zip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      length="50"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[latitude]"
+                      name="latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      length="50"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[longitude]"
+                      name="longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_network]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_network]"
+                      length="160"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_network]"
+                      name="ev_network"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_connector_types]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_connector_types]"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_connector_types]"
+                      name="ev_connector_types"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_level1_evse_num]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_level1_evse_num]"
+                      length="20"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_level1_evse_num]"
+                      name="ev_level1_evse_num"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_level2_evse_num]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_level2_evse_num]"
+                      length="20"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_level2_evse_num]"
+                      name="ev_level2_evse_num"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_dc_fast_num]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_dc_fast_num]"
+                      length="20"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_dc_fast_num]"
+                      name="ev_dc_fast_num"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[access_code]"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_code]"
+                      name="access_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_days_time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[access_days_time]"
+                      length="255"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[access_days_time]"
+                      name="access_days_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[status_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[status_code]"
+                      length="80"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[status_code]"
+                      name="status_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[open_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[open_date]"
+                      length="30"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[open_date]"
+                      name="open_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[date_last_confirmed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[date_last_confirmed]"
+                      length="30"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[date_last_confirmed]"
+                      name="date_last_confirmed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[source_file]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[source_file]"
+                      length="260"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[source_file]"
+                      name="source_file"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[station_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="station_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[station_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="station_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[street_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="street_address" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="120"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="zip" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_network]"
+                      codePage="1252"
+                      dataType="str"
+                      length="160"
+                      name="ev_network" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_connector_types]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ev_connector_types" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_level1_evse_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ev_level1_evse_num" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_level2_evse_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ev_level2_evse_num" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[ev_dc_fast_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ev_dc_fast_num" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[access_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="access_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[access_days_time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="access_days_time" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[status_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="status_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[open_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="open_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[date_last_confirmed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="date_last_confirmed" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].ExternalColumns[source_file]"
+                      codePage="1252"
+                      dataType="str"
+                      length="260"
+                      name="source_file" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load EV Raw CSV to SQL\Raw SQL Data"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Raw SQL Data"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[EV_Stations_Raw]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-84HFCTF\SQLEXPRESS.EVAnalyticsDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-84HFCTF\SQLEXPRESS.EVAnalyticsDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[latitude]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="latitude"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[latitude]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[longitude]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="longitude"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[longitude]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[ev_level1_evse_num]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ev_level1_evse_num"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_level1_evse_num]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_level1_evse_num]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[ev_level2_evse_num]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ev_level2_evse_num"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_level2_evse_num]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_level2_evse_num]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[ev_dc_fast_num]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ev_dc_fast_num"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_dc_fast_num]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[ev_dc_fast_num]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[open_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="open_date"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[open_date]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[open_date]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[date_last_confirmed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="date_last_confirmed"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[date_last_confirmed]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output].Columns[date_last_confirmed]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[station_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="station_id_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[station_id]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[station_id_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[station_name_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="station_name_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[station_name]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[station_name_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[street_address_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="street_address_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[street_address]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[street_address_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[city_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="city_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[city_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[state_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="state_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[state_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[zip_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="zip_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[zip]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[zip_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[country_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="country_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[country_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[ev_network_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="160"
+                      cachedName="ev_network_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_network]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[ev_network_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[ev_connector_types_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ev_connector_types_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_connector_types]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[ev_connector_types_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[access_code_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="access_code_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[access_code]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[access_code_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[access_days_time_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="access_days_time_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[access_days_time]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[access_days_time_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[status_code_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="status_code_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[status_code]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[status_code_unicode]" />
+                    <inputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].Columns[source_file_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="260"
+                      cachedName="source_file_unicode"
+                      externalMetadataColumnId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[source_file]"
+                      lineageId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output].Columns[source_file_unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[raw_id]"
+                      dataType="i4"
+                      name="raw_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[station_id]"
+                      dataType="wstr"
+                      length="100"
+                      name="station_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[station_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="station_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[street_address]"
+                      dataType="wstr"
+                      length="255"
+                      name="street_address" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      dataType="wstr"
+                      length="120"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      dataType="wstr"
+                      length="80"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[zip]"
+                      dataType="wstr"
+                      length="30"
+                      name="zip" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="80"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_network]"
+                      dataType="wstr"
+                      length="160"
+                      name="ev_network" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_connector_types]"
+                      dataType="wstr"
+                      length="255"
+                      name="ev_connector_types" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_level1_evse_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ev_level1_evse_num" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_level2_evse_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ev_level2_evse_num" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[ev_dc_fast_num]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ev_dc_fast_num" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[access_code]"
+                      dataType="wstr"
+                      length="80"
+                      name="access_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[access_days_time]"
+                      dataType="wstr"
+                      length="255"
+                      name="access_days_time" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[status_code]"
+                      dataType="wstr"
+                      length="80"
+                      name="status_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[open_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="open_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[date_last_confirmed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="date_last_confirmed" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[source_file]"
+                      dataType="wstr"
+                      length="260"
+                      name="source_file" />
+                    <externalMetadataColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input].ExternalColumns[loaded_at]"
+                      dataType="dbTimeStamp2"
+                      name="loaded_at"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load EV Raw CSV to SQL.Paths[Data Conversion Output]"
+              endId="Package\Load EV Raw CSV to SQL\Raw SQL Data.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load EV Raw CSV to SQL\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load EV Raw CSV to SQL.Paths[Flat File Source Output]"
+              endId="Package\Load EV Raw CSV to SQL\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load EV Raw CSV to SQL\Raw csv Data.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\Load EV Raw CSV to SQL"
+          TopLeft="310.499983335535,162.366665575835" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load EV Raw CSV to SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Load EV Raw CSV to SQL\Raw SQL Data"
+          TopLeft="358.23331430124,214.76666662448" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Load EV Raw CSV to SQL\Raw csv Data"
+          TopLeft="348.13331498421,19.3666665702395" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load EV Raw CSV to SQL\Data Conversion"
+          TopLeft="349.66664786223,112.29999996384" />
+        <EdgeLayout
+          Id="Package\Load EV Raw CSV to SQL.Paths[Flat File Source Output]"
+          TopLeft="419.33331498421,60.9666665702396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.3333328780202,51.3333333936002"
+              Start="0,0"
+              End="8.3333328780202,43.8333333936002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6666666968001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6666666968001"
+                    Point2="0,25.6666666968001"
+                    Point3="4,25.6666666968001" />
+                  <mssgle:LineSegment
+                    End="4.3333328780202,25.6666666968001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.3333328780202,25.6666666968001"
+                    Point2="8.3333328780202,25.6666666968001"
+                    Point3="8.3333328780202,29.6666666968001" />
+                  <mssgle:LineSegment
+                    End="8.3333328780202,43.8333333936002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load EV Raw CSV to SQL.Paths[Data Conversion Output]"
+          TopLeft="429.749981081735,153.89999996384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.8666666606398"
+              Start="0,0"
+              End="0,53.3666666606398">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.3666666606398" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load EV Raw CSV to SQL\Raw SQL Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
